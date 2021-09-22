@@ -1,0 +1,258 @@
+.container{
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.digitalSign {
+  composes: loginOrPhone from "../SignIn/index.scss";
+  width: 40rem;
+  & > button {
+    margin-top: 1.5rem;
+  }
+}
+.cert {
+  background-color: #fbfbff;
+  border: 0.0625rem solid var(--primary-color);
+  padding: 1.25rem;
+  &-container {
+    position: relative;
+    & > p {
+      font-size: 1rem;
+      color: var(--smoke-color);
+      margin-bottom: 0.875rem;
+    }
+  }
+  &-block {
+    position: relative;
+    &:not(:first-of-type) {
+      margin-top: 0.625rem;
+    }
+    &__invalid {
+      composes: flAlnCen from "../index.scss";
+      composes: flJusCen from "../index.scss";
+      top: 0rem;
+      left: 0rem;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: var(--attention-color);
+      border: 0.0625rem solid var(--attention-color);
+      opacity: 0.7;
+      & > span {
+        color: var(--white-color);
+        font-weight: 600;
+        font-size: 1.25rem;
+      }
+      & > svg {
+        top: 0.625rem;
+        right: 0.625rem;
+        &:hover {
+          & path {
+            fill: var(--low-color);
+          }
+        }
+        & path {
+          fill: var(--white-color);
+        }
+      }
+    }
+  }
+  &-data {
+    position: relative;
+    & > p {
+      color: var(--primary-color);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+    }
+    & .action {
+      position: absolute;
+      bottom: 0rem;
+      right: 0rem;
+      cursor: pointer;
+    }
+  }
+  &-fields {
+    & > div {
+      margin-bottom: 0.875rem;
+      width: initial !important;
+      min-width: 10rem;
+    }
+  }
+}
+.install {
+  max-width: 28.125rem;
+  & > p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: var(--smoke-color);
+    &:last-of-type {
+      margin-top: 0.875rem;
+    }
+    & > a {
+      border-bottom: 0.0625rem solid var(--primary-color);
+      padding-bottom: 0.125rem;
+    }
+  }
+}
+.digitalSignNotFound {
+  @extend .install;
+  max-width: 33.75rem;
+  & > p {
+    &.indent {
+      margin-top: 0.625rem;
+      & > span {
+        margin-right: 0.625rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.2rem;
+  background-color: white;
+  text-align: center;
+  align-items: center;
+  padding: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  & .headerText{
+
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+.innerContainer{
+   width: 70%;
+   display: flex;
+   flex-direction: column;
+
+}
+
+/*custom dropdown*/
+.dropdown {
+  position: relative;
+  color: #333;
+  cursor: default;
+  margin: 1rem 0;
+}
+
+.dropdown .arrow {
+  border-color: #999 transparent transparent;
+  border-style: solid;
+  border-width: 5px 5px 0;
+  content: " ";
+  display: block;
+  height: 0;
+  margin-top: 0.3rem;
+  position: absolute;
+  right: 10px;
+  top: 14px;
+  width: 0;
+}
+
+.dropdown .arrow.open {
+  border-color: transparent transparent #999;
+  border-width: 0 5px 5px;
+}
+
+.dropdown .selected-value {
+  line-height: 1.5;
+  font-size: 1rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  padding: 8px 52px 8px 10px;
+  transition: all 200ms ease;
+  width: 100%;
+}
+
+.dropdown .options {
+  display: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  margin-top: -1px;
+  max-height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1000;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dropdown .options.open {
+  display: block;
+}
+
+.dropdown .option {
+  box-sizing: border-box;
+  color: rgba(51, 51, 51, 0.8);
+  cursor: pointer;
+  padding: 8px 10px;
+}
+
+.dropdown .option.selected,
+.dropdown .option:hover {
+  background-color: #f2f9fc;
+  color: #333;
+}
+
+.dropDownContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.2rem;
+  
+}
+
+.dropDownContainer {
+  & > div {
+    line-height: 1.5rem;
+  }
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+.notValidDate{
+  color: red
+}
+
+
+//
+$breakpoint-tablet: 991px;
+
+@media (max-width: $breakpoint-tablet) {
+  .digitalSign {
+    width: 100%;
+    & > button {
+      margin-top: 1.875rem !important;
+    }
+  }
+  .cert {
+    &-data {
+      & .action {
+        position: relative;
+        margin-top: 0.625rem;
+        display: inline-block;
+      }
+    }
+  }
+  .digitalSignNotFound {
+    & > p {
+      text-align: justify;
+    }
+  }
+}
+
+

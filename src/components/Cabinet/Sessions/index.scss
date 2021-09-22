@@ -1,0 +1,9 @@
+.sessions {
+  composes: history from "../History/index.scss";
+}
+.header {
+  composes: header from "../index.scss";
+}
+.table {
+  composes: table from "../History/index.scss";
+}

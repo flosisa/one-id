@@ -1,0 +1,21 @@
+.home {
+  composes: flCol from "../index.scss";
+  composes: flAlnCen from "../index.scss";
+  margin-top: 6.25rem;
+}
+
+//
+$breakpoint-mini-screen: 1199px;
+$breakpoint-mobile: 850px;
+
+@media (max-width: $breakpoint-mini-screen) {
+  .home {
+    padding: 0rem 2rem;
+  }
+}
+@media (max-width: $breakpoint-mobile) {
+  .home {
+    margin-top: 0rem;
+    padding: 1.25rem 1rem;
+  }
+}

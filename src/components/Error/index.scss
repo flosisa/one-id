@@ -1,0 +1,7 @@
+.error {
+  composes: flAlnCen from "../index.scss";
+  composes: flJusCen from "../index.scss";
+  flex-grow: 1;
+  height: 100vh;
+  color: var(--grey-color);
+}

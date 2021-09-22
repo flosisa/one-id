@@ -1,0 +1,32 @@
+.legend {
+  composes: flCol from "../index.scss";
+  flex-wrap: wrap;
+  list-style: none;
+  & .pie-data {
+    position: relative;
+    padding-left: 1.5625rem;
+    margin: 0.4375rem 0rem;
+    & .dot {
+      position: absolute;
+      left: 0rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0.125rem;
+      height: 1.125rem;
+      width: 1.125rem;
+      border-radius: 50%;
+      box-shadow: 0rem 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
+    }
+  }
+  & .bar-data {
+    padding: 0.4375rem 0.8125rem;
+    margin: 0.625rem 0rem;
+  }
+  & .stat {
+    & > span {
+      &:last-of-type {
+        color: var(--mid-color);
+      }
+    }
+  }
+}

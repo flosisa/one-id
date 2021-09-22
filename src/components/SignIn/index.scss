@@ -1,0 +1,234 @@
+$sign-in-block-width: 40rem;
+$input-width: 13.75rem;
+$input-margin: 0.625rem;
+
+.sign-in {
+  width: $sign-in-block-width;
+  & .title {
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+  }
+  &-title,
+  &-title > p {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+  :global(#p-r) {
+    width: 33.75rem;
+  }
+}
+.options {
+  composes: flAlnCen from "../index.scss";
+  align-items: flex-end;
+  & > div {
+    margin-right: 0.1rem;
+    & > span {
+      display: block;
+      padding: 0.875rem 1.875rem;
+      font-size: 1.25rem;
+      background-color: var(--primary-color);
+      color: var(--white-color);
+      border-top-right-radius: 0.25rem;
+      border-top-left-radius: 0.25rem;
+      & > span {
+        font-size: 1.25rem;
+        color: var(--white-color);
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: var(--primary-hover-color);
+      }
+    }
+    &.active > span {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      background-color: var(--white-color);
+      color: var(--dark-color);
+      font-size: 1.625rem;
+      pointer-events: none;
+      font-weight: 700;
+      & > span {
+        font-size: 1.625rem;
+        color: var(--dark-color);
+      }
+    }
+  }
+  & + div {
+    border-radius: 0rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
+}
+.login-or-phone {
+  composes: card from "../index.scss";
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0rem 0rem 3.125rem rgba(27, 4, 105, 0.2);
+  }
+  & > form {
+    max-width: calc(#{$input-width} * 2 + #{$input-margin});
+  }
+}
+.fields {
+  composes: flAlnCen from "../index.scss";
+  & > div {
+    &:last-of-type {
+      margin-left: $input-margin;
+    }
+    & .sign-in__input {
+      max-width: $input-width;
+    }
+  }
+}
+.actions {
+  composes: flAlnCen from "../index.scss";
+  justify-content: space-between;
+  margin-top: 0.25rem;
+  & .forgot {
+    white-space: nowrap;
+    font-size: 0.875rem;
+    & > span {
+      color: var(--mid-color);
+      font-size: 0.875rem;
+    }
+    & > a {
+      font-size: 0.875rem;
+    }
+  }
+}
+// External services status
+.external-services-status {
+  width: $sign-in-block-width;
+  background-color: var(--warn-bg-color) !important;
+  color: var(--attention-color);
+  & :global(#m-b) {
+    font-style: normal;
+  }
+  & svg {
+    & path {
+      fill: var(--attention-color) !important;
+    }
+  }
+}
+//
+.password-reset {
+  composes: modalContent from "../index.scss";
+  & > p {
+    font-size: 1.625rem;
+    font-weight: 700;
+    line-height: 2.125rem;
+  }
+  & > span {
+    font-size: 1rem;
+    color: var(--mid-color);
+    display: inline;
+    & + .action > button {
+      margin-top: 1.875rem;
+    }
+  }
+  & .action {
+    margin-top: 0.375rem;
+  }
+}
+
+.captchaCode {
+  composes: flAlnCen from "../index.scss";
+}
+.input-width {
+  width: 7.5rem !important;
+}
+
+.passwordSentConfirmation {
+  & > .header {
+    font-size: 1.625rem;
+    font-weight: 700;
+    line-height: 2.5rem;
+  }
+  & > .body {
+    margin: 1rem 0;
+    & p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+.idCardContainer {
+  composes: card from "../index.scss";
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0rem 0rem 3.125rem rgba(27, 4, 105, 0.2);
+  }
+  & > form {
+    max-width: calc(#{$input-width} * 2.3 + #{$input-margin});
+  }
+
+  & > form > .headerText {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
+.passwordResetResponse {
+  display: flex;
+  flex-direction: column;
+  & > span {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  & > span:last-child {
+    margin-bottom: 2rem;
+  }
+}
+
+//
+$breakpoint-mobile: 850px;
+
+@media (max-width: $breakpoint-mobile) {
+  .sign-in {
+    width: 100%;
+    :global(#p-r) {
+      width: 100%;
+    }
+    &-title {
+      font-size: 1.875rem;
+    }
+  }
+  .options {
+    & > span {
+      & > span {
+        font-size: 1rem;
+      }
+      &.active > span {
+        font-size: 1.125rem;
+      }
+    }
+  }
+  .fields {
+    & > div {
+      &:last-of-type {
+        margin-left: 0;
+      }
+    }
+  }
+  .action {
+    height: 2.375rem;
+    margin-bottom: 1.25rem;
+  }
+  .password-reset {
+    & > p {
+      font-size: 1.625rem;
+    }
+    & .action {
+      margin-bottom: 0rem;
+    }
+  }
+  .captchaCode {
+    margin-bottom: 1.5rem;
+    & > div {
+      &:last-of-type {
+        display: flex !important;
+      }
+    }
+  }
+}

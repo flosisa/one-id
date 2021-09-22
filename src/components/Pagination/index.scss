@@ -1,0 +1,66 @@
+.pagination {
+  composes: flAlnCen from "../index.scss";
+}
+.block {
+  composes: flJusCen from "../index.scss";
+  composes: flAlnCen from "../index.scss";
+  width: 2rem;
+  height: 2rem;
+}
+.arrows {
+  @extend .block;
+  border: 0.0625rem solid var(--primary-color);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  &:hover {
+    border-color: var(--primary-hover-color);
+    & path {
+      fill: var(--primary-hover-color);
+    }
+  }
+  &__disable {
+    border: 0.0625rem solid var(--low-color);
+    pointer-events: none;
+    & path {
+      fill: var(--low-color);
+    }
+  }
+}
+.end {
+  transform: rotate(180deg);
+}
+.page {
+  @extend .block;
+  display: none;
+  &:hover {
+    & > span {
+      color: var(--primary-hover-color);
+    }
+  }
+  & > span {
+    color: var(--primary-color);
+  }
+  &__show {
+    display: flex;
+    margin: 0rem 0.5rem;
+    cursor: pointer;
+  }
+  &__active {
+    background-color: #4e4e4e;
+    pointer-events: none;
+    border-radius: 0.25rem;
+    & > span {
+      font-weight: 700;
+      color: var(--white-color);
+    }
+  }
+}
+.count-info {
+  margin-left: 5.625rem;
+  & > span {
+    color: var(--smoke-color);
+  }
+}
+.margin {
+  margin-right: 0.5rem;
+}

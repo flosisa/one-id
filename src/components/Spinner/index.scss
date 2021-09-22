@@ -1,0 +1,52 @@
+.spinner {
+  @-webkit-keyframes spinAround {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @-moz-keyframes spinAround {
+    from {
+      -moz-transform: rotate(0deg);
+    }
+    to {
+      -moz-transform: rotate(360deg);
+    }
+  }
+  @keyframes spinAround {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  //
+  composes: flAlnCen from "../index.scss";
+  composes: flJusCen from "../index.scss";
+  -webkit-animation: spinAround 1s linear infinite;
+  -moz-animation: spinAround 1s linear infinite;
+  animation: spinAround 1s linear infinite;
+  height: 2.375rem;
+  & + button {
+    display: none;
+  }
+  &.white {
+    filter: brightness(0) invert(1);
+  }
+}
+
+//
+$breakpoint-mobile: 850px;
+
+@media (max-width: $breakpoint-mobile) {
+  .spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+  }
+}

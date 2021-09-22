@@ -1,0 +1,23 @@
+.header{
+    composes: header from "../index.scss";
+}
+
+.work-history-items{
+    display: flex;
+ 
+    & > div{
+        width: 100%;
+    }
+    & > div:only-child > p {
+       line-height: 1.25rem;
+       white-space:normal;
+    
+    }
+
+}
+
+.workHistoryCard{
+    width: 60%;
+    border-bottom: 1px solid #D8D8D8;
+    margin: 1rem 0rem;
+}

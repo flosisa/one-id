@@ -1,0 +1,7 @@
+export const PINFL_CHECK = 'pinflCheck'
+export const SMS_ASK = 'smsAsk'
+export const SMS_CHECK = 'smsCheck'
+export const SIGN_UP = 'signUp'
+export const LOGIN_GENERATE = 'loginGenerate'
+export const PASSWORD_GENERATE = 'passwordGenerate'
+export const CHECK_PASSPORT_BIRTH_DATE = 'checkPassportBirthDate'

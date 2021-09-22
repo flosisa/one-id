@@ -1,0 +1,13 @@
+.stats {
+  padding: 3.125rem;
+  & > p {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-hover-color);
+  }
+}
+.pies {
+  composes: fl from "../index.scss";
+  justify-content: space-around;
+  margin-bottom: 3.75rem;
+}

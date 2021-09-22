@@ -1,0 +1,286 @@
+.header {
+  composes: header from "../index.scss";
+}
+.tabs {
+  composes: flAln from "Components/index.scss";
+}
+.tab {
+  font-size: 1rem;
+  color: var(--primary-color);
+  padding-bottom: 0.25rem;
+  &:not(:first-of-type) {
+    margin-left: 1.875rem;
+  }
+  &:hover {
+    cursor: pointer;
+    color: var(--primary-hover-color);
+  }
+  &.active {
+    pointer-events: none;
+    font-weight: 500;
+    color: var(--dark-color);
+    border-bottom: 0.125rem solid var(--primary-hover-color);
+  }
+}
+.user-profile {
+  & .action-photo {
+    margin-top: 1.25rem;
+    & button {
+      margin-left: 3rem;
+    }
+  }
+
+  & .user-profile-column{
+     display: block;
+     & .errorMessage{
+       margin-bottom: 1rem;
+       color: red;
+       font-style: italic;
+     }
+  }
+  & .user-profile-column-photo{
+      display: flex;
+      flex-direction: row;
+    & .user-profile-avatar{
+      width: 11rem;
+      height: 14rem;
+      border-radius: 0.25rem;
+      margin: 0rem 3rem ;
+      & > .img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.25rem;
+      }
+    }
+      & .user-profile-data-item {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 60%;
+      }
+  }
+
+  
+}
+
+.change-password-alert-success {
+  background-color: var(--success-color);
+   & svg {
+     & path {
+        fill: var(--alert-success-icon);
+      }
+  } 
+}
+
+.change-passport-name{
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+    & > div:first-child{
+      width: 60%;
+      font-weight: 900;
+      font-size: 1.625rem;
+      font-weight: 700;
+      line-height: 2.125rem;
+    }
+    & > .change-passport-name-box{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2rem 0 1rem 0;
+      & input{
+        width: 22rem;
+      }
+    }
+
+    & > div:last-child{
+      & > .change-password-alert-error,
+      & > .change-password-alert-success{
+        margin: 0;
+      }
+    }
+    & > p {
+      width: 12rem;
+      font-weight: 900;
+      font-size: 1.625rem;
+      font-weight: 700;
+      line-height: 2.125rem;
+    }
+}
+.change-password-alert-error {
+  background-color: var(--warn-bg-color);
+  color: var(--attention-color);
+   & svg {
+     & path {
+        fill: var(--attention-color);
+      }
+  } 
+}
+
+.registrationAlert{
+  margin-top: 1.25rem;
+}
+.contacts {
+  composes: hr from "../index.scss";
+  & .address {
+    & > p {
+      font-weight: 500;
+      &:first-of-type {
+        color: var(--grey-color);
+        margin-bottom: 0.5rem;
+      }
+    }
+    & > button {
+      margin-top: 1.25rem;
+    }
+  }
+}
+.warn {
+    color: var(--warn-color);
+    margin-bottom: 0.625rem;
+  }
+.alertUsers{
+    width: 38rem;
+    & .warn{
+      font-size: 0.9rem;
+    }
+}
+.settings {
+  composes: hr from "../index.scss";
+}
+.inner-header {
+  composes: innerHeader from "../index.scss";
+  margin-bottom: 1.375rem;
+}
+.inner-width {
+  composes: inputWidth from "Components/SignUp/index.scss";
+}
+.change-profile {
+  composes: flAlnCen from "Components/index.scss";
+  & > .action-photo {
+    margin-left: 1.25rem;
+
+    & > .secondary {
+      margin-left: 20px;
+    }
+  }
+  & > img[alt="spinner"] {
+    margin-left: 1.25rem;
+  }
+}
+.change-login {
+  composes: flCol from "Components/index.scss";
+  align-items: flex-start;
+  & > .action-photo {
+    margin-left: 0rem;
+    margin-top: 0.625rem;
+  }
+}
+.change-password {
+  composes: flAlnCen from "Components/index.scss";
+  & > div:last-of-type {
+    margin-left: 1.25rem;
+  }
+  & + button {
+    margin-top: 0.625rem;
+  }
+}
+.delete {
+  &-profile {
+    width: 38.125rem;
+    & > span {
+      font-size: 1rem;
+      color: var(--smoke-color);
+    }
+  }
+  &-action {
+    composes: flAlnCen from "Components/index.scss";
+    margin-top: 1.25rem;
+    & > button {
+      margin-left: 1.25rem;
+    }
+  }
+}
+
+
+//
+$breakpoint-mini-screen: 1199px;
+$breakpoint-mobile: 850px;
+
+@media (max-width: $breakpoint-mini-screen) {
+  .tab {
+    display: table !important;
+    &:not(:first-of-type) {
+      margin-top: 0.625rem;
+    }
+    &:last-of-type {
+      margin-bottom: 1.875rem;
+    }
+    margin-left: 0rem !important;
+  }
+  // .user-profile {
+  //   & div {
+  //     display: block;
+  //   }
+  //   & .action {
+  //     margin-top: 1.875rem;
+  //     & > div {
+  //       height: 1.25rem;
+  //     }
+  //   }
+  // }
+  .delete {
+    &-profile {
+      width: 100%;
+    }
+  }
+
+  .user-profile {
+    display: flex;
+    flex-direction: column;
+    & .action-photo {
+        & button {
+          margin-left: 0rem;
+        }
+      }
+    & .user-profile-column-photo{
+      flex-direction: column;
+      & .user-profile-avatar{
+        width: 11rem;
+        height: 14rem;
+        margin: 1rem 0rem;
+      }
+    }
+  }
+}
+@media (max-width: $breakpoint-mobile) {
+  .contacts {
+    & .address {
+      & > p {
+        font-size: 0.75rem;
+      }
+    }
+  }
+  .change-profile {
+    &:not(:last-of-type) {
+      margin-bottom: 1.875rem;
+    }
+    & .action-photo{
+      margin-left: 0rem;
+    }
+  }
+  .change-password {
+    & > div {
+      margin-left: 0rem !important;
+    }
+  }
+  .delete {
+    &-action {
+      & > button {
+        margin-left: 0rem;
+      }
+    }
+  }
+}

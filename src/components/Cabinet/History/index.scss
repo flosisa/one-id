@@ -1,0 +1,44 @@
+.header {
+  composes: header from "../index.scss";
+}
+.table {
+  border-spacing: 0rem;
+  margin: 2.5rem 0rem;
+  & > tbody > tr {
+    & > th {
+      text-align: left;
+      padding-bottom: 0.625rem;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      min-width: 11.25rem;
+    }
+    & td {
+      height: 3.75rem;
+      color: var(--smoke-color);
+    }
+    & > th,
+    & > td {
+      padding-right: 1.875rem;
+      border-bottom: 0.0625rem solid var(--low-color);
+      vertical-align: middle;
+    }
+  }
+}
+
+//
+$breakpoint-mini-screen: 1199px;
+$breakpoint-tablet: 991px;
+$breakpoint-mobile: 850px;
+
+@media (max-width: $breakpoint-mini-screen) {
+  .history {
+    overflow-x: auto !important;
+    &::-webkit-scrollbar {
+      height: 0.5625rem;
+    }
+    & > table {
+      margin-bottom: 0.625rem;
+    }
+  }
+}

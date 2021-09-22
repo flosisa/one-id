@@ -1,0 +1,55 @@
+.common {
+  padding: 3.125rem;
+  background-color: var(--white-color);
+}
+.cabinet {
+  @extend .common;
+  background-color: var(--white-color);
+  position: relative;
+  height: 100%;
+}
+.container {
+  & hr {
+    margin: 3.125rem 0rem;
+  }
+}
+.content-width {
+  max-width: 42.75rem;
+}
+.hr {
+  & hr {
+    max-width: 42.75rem;
+    margin: 1.875rem 0rem;
+  }
+}
+.header {
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-bottom: 1.375rem;
+}
+.inner-header {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.gradient {
+  width: 100%;
+  margin-top: 1.875rem;
+  padding-top: 3.125rem;
+  border: 0.0625rem solid;
+  border-image: linear-gradient(#f0f0f0, #fff) 100% 0 0 0/1.875rem 0 0 0;
+}
+
+//
+$breakpoint-mobile: 850px;
+
+@media (max-width: $breakpoint-mobile) {
+  .common {
+    padding: 1.25rem 1rem;
+  }
+  .header {
+    font-size: 1.625rem;
+  }
+  .gradient {
+    margin-top: 1.25rem;
+  }
+}

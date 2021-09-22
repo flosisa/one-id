@@ -1,0 +1,76 @@
+.auth-via {
+  composes: flCol from "../index.scss";
+  composes: flAlnCen from "../index.scss";
+  composes: flJusCen from "../index.scss";
+  background-color: var(--primary-hover-color);
+  height: 100vh;
+  & > span {
+    color: var(--low-color);
+    font-size: 0.75rem;
+    margin-bottom: 1.875rem;
+  }
+}
+.main-logo {
+  composes: flAlnCen from "../index.scss";
+  margin-bottom: 1.875rem;
+  & > img[alt="beta"] {
+    margin-left: 0.625rem;
+  }
+}
+.transfer {
+  background-color: var(--white-color);
+  min-width: 25rem;
+  padding: 3.125rem;
+  &__title {
+    margin-bottom: 1.25rem;
+    font-size: 1.375rem;
+    font-weight: 600;
+  }
+  &__list {
+    display: block;
+    margin-bottom: 2.5rem;
+  }
+  &__item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 1.25rem;
+    cursor: pointer;
+  }
+  &__item-body {
+    padding-left: 1rem;
+    flex: 0 0 calc(100% - 1.5rem);
+    width: calc(100% - 1.5rem);
+    box-sizing: border-box;
+  }
+  &__item-control {
+    flex: 0 0 1.5rem;
+    width: 1.5rem;
+  }
+  &__item-title {
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  &__item-text {
+    & > span {
+      margin-left: 0.625rem;
+      font-size: 1rem;
+    }
+  }
+  &__physical-entity {
+    composes: flAlnCen from "../index.scss";
+    margin-bottom: 2.5rem;
+    cursor: pointer;
+    & > p {
+      margin-left: 1rem;
+      margin-bottom: 0rem;
+    }
+    & > div {
+      padding-top: 0.375rem;
+    }
+  }
+  & .active {
+    pointer-events: none;
+  }
+}

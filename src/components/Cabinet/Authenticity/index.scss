@@ -1,0 +1,61 @@
+.authenticity {
+  composes: contentWidth from "../index.scss";
+  :global(#digital-sign) {
+    box-shadow: none;
+    padding: 0rem;
+    & > button {
+      margin-top: 2.5rem;
+    }
+  }
+  :global(#cert-block) {
+    background-color: #f6f6f6;
+    border: none;
+  }
+}
+.header {
+  composes: header from "../index.scss";
+}
+.confirmed {
+  margin-bottom: 0.875rem;
+  & + div {
+    :global(#cert-block) {
+      & > div:first-of-type {
+        background-color: var(--success-color);
+        border-color: var(--success-color);
+      }
+      & button {
+        display: none;
+      }
+    }
+  }
+}
+.unconfirmed {
+  composes: flAlnCen from "Components/index.scss";
+  padding: 1.25rem;
+  background-color: #f6f6f6;
+  position: relative;
+  margin-bottom: 1.875rem;
+  border-radius: 0.25rem;
+  & > svg {
+    transform: scale(1.75);
+    margin-right: 1.25rem;
+    & path {
+      fill: var(--grey-color);
+    }
+  }
+}
+.no-tin-data {
+  composes: error from "Components/Error/index.scss";
+}
+
+//
+$breakpoint-mobile: 850px;
+
+@media (max-width: $breakpoint-mobile) {
+  .unconfirmed {
+    & > svg {
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+  }
+}

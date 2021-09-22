@@ -1,0 +1,455 @@
+.sign-up {
+  &-title {
+    composes: signInTitle from "../SignIn/index.scss";
+    composes: flAlnCen from "../index.scss";
+    justify-content: space-between;
+    margin-bottom: 1.375rem;
+    & > p {
+      white-space: nowrap;
+    }
+    & > span {
+      width: 18.75rem;
+      text-align: right;
+      color: var(--mid-color);
+    }
+  }
+}
+
+.beta-tooltip {
+  & > span {
+    width: 18rem;
+    max-width: initial;
+    top: 37.2rem;
+    left: 30%;
+    background-color: var(--primary-hover-color);
+    color: var(--white-color);
+    border: 0.0625rem solid rgba(255, 255, 255, 0.6);
+    opacity: 1;
+    font-weight: 400;
+    &:after {
+      border-color: transparent var(--primary-hover-color) transparent transparent;
+    }
+  }
+}
+
+// header
+.stages {
+  composes: flAlnCen from "../index.scss";
+  margin-bottom: 1.875rem;
+}
+.stage {
+  composes: flAlnCen from "../index.scss";
+  position: relative;
+  &:last-of-type {
+    margin-left: 1.875rem;
+  }
+  & > span {
+    margin-left: 0.5rem;
+    color: var(--primary-hover-color);
+  }
+  &-id {
+    composes: flAlnCen from "../index.scss";
+    composes: flJusCen from "../index.scss";
+    & > span,
+    & > img {
+      position: absolute;
+      color: var(--white-color);
+    }
+  }
+  &.passive {
+    & > div {
+      & > svg {
+        & circle {
+          fill: var(--grey-color);
+          opacity: 0.5;
+        }
+      }
+    }
+    & > span {
+      color: var(--grey-color);
+    }
+  }
+}
+
+//
+.identification {
+  & > form {
+    & > button {
+      margin-top: 0.625rem;
+    }
+    & p,
+    & span:not(:global(#t-p-c)) {
+      color: var(--smoke-color);
+    }
+  }
+
+  .error-tooltip {
+    & > span {
+      top: 37rem;
+      left: 15rem;
+    }
+  }
+
+  &-fields {
+    composes: fl from "../index.scss";
+    & > div {
+      width: 17.25rem;
+      margin-right: 1.375rem;
+    }
+    & > img {
+      width: 25rem;
+      height: 100%;
+    }
+  }
+}
+
+.newsAlert {
+  margin-top: 1rem;
+}
+.sms-code {
+  &-sending {
+    composes: flAlnCen from "../index.scss";
+    margin-top: 1.25rem;
+    & > span {
+      margin-right: 0.625rem;
+      color: var(--smoke-color);
+    }
+  }
+  &__sent {
+    & > p {
+      width: 13.125rem;
+    }
+    &-block {
+      composes: fl from "../index.scss";
+      align-items: flex-end;
+      & > div {
+        margin-top: 0.625rem;
+      }
+      & > p {
+        margin: 0rem 1.25rem;
+        color: var(--smoke-color);
+        width: 10.75rem;
+      }
+      & > button {
+        margin-top: 1.25rem;
+      }
+    }
+  }
+}
+.no-margin {
+  height: initial;
+  margin-bottom: 0rem;
+}
+.submit {
+  composes: fl from "../index.scss";
+  align-items: flex-end;
+  margin-top: 1.875rem;
+  & > p {
+    max-width: 34.375rem;
+    margin-right: 2.5rem;
+  }
+}
+.margin-top {
+  margin-top: 0.625rem !important;
+}
+.input-width {
+  width: 7.5rem !important;
+}
+//
+.creation {
+  composes: title from "../index.scss";
+  & > hr {
+    margin-top: 1rem;
+    margin: 1.875rem 0rem;
+  }
+  &__form {
+    composes: title from "../index.scss";
+    & > p {
+      margin-bottom: 1.25rem;
+    }
+    & > .action {
+      margin-top: 1.875rem;
+    }
+  }
+}
+.personal-data {
+  composes: personalData from "../index.scss";
+}
+.login {
+  composes: fl from "../index.scss";
+  &-options {
+    composes: flAlnCen from "../index.scss";
+    & > div {
+      &:not(:first-of-type) {
+        margin-left: 0.25rem;
+      }
+      & > span {
+        &:nth-of-type(odd) {
+          text-decoration: underline;
+          text-underline-position: under;
+          color: var(--primary-color);
+          &:hover {
+            cursor: pointer;
+            color: var(--primary-hover-color);
+          }
+        }
+        &:nth-of-type(even) {
+          user-select: none;
+          color: var(--mid-color);
+        }
+      }
+    }
+    &__container {
+      margin-left: 1.875rem;
+      & > p {
+        margin-bottom: 0.625rem;
+        font-weight: 600;
+        color: var(--mid-color);
+      }
+    }
+  }
+}
+.password {
+  composes: flAlnCen from "../index.scss";
+  & > div > img,
+  & > button {
+    margin: 0rem 1.875rem;
+  }
+}
+
+.error-locale {
+  & button {
+    margin-bottom: 10px;
+  }
+  & div {
+    color: red;
+    font-size: 14px;
+    font-style: italic;
+  }
+}
+//
+.agreement {
+  composes: signIn from "../SignIn/index.scss";
+  composes: card from "../index.scss";
+  margin-top: 0.625rem;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0rem 0rem 3.125rem rgba(27, 4, 105, 0.2);
+  }
+  & > img {
+    position: absolute;
+    top: -5rem;
+    right: -6.25rem;
+    filter: drop-shadow(1.25rem 2.5rem 1.25rem #dbd5ed);
+    transform: rotate(15deg);
+  }
+  & .container {
+    width: 28.75rem;
+  }
+  &-title {
+    composes: signInTitle from "../SignIn/index.scss";
+    margin-bottom: 2rem;
+    margin-left: 0rem;
+  }
+  & .label {
+    margin-bottom: 1.125rem;
+    font-size: 1.375rem;
+    font-weight: 600;
+  }
+  & .desc {
+    margin-bottom: 0.875rem;
+    font-size: 1rem;
+    color: var(--mid-color);
+    line-height: 1.5rem;
+  }
+  & .info {
+    margin-bottom: 1.5rem;
+    color: var(--mid-color);
+    line-height: 1.375rem;
+  }
+  &-button {
+    composes: flAlnCen from "../index.scss";
+    & > button {
+      margin-right: 1.25rem;
+    }
+  }
+}
+.user-agreement {
+  composes: flAlnCen from "../index.scss";
+  margin-bottom: 1.875rem;
+  & > span {
+    color: var(--mid-color);
+    margin: 0rem 0.25rem 0.125rem 0.625rem;
+    font-size: 1rem;
+  }
+}
+
+.instruction-button {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  & span {
+    margin: 0.2rem 0;
+  }
+}
+//
+.signed-up-greet {
+  composes: modalContent from "../index.scss";
+  & > div {
+    margin-bottom: 1rem;
+    & p,
+    & span,
+    & b {
+      font-size: 1rem;
+    }
+    & p {
+      line-height: 1.5rem;
+      color: var(--smoke-color);
+    }
+    & span {
+      color: var(--mid-color);
+      font-weight: 600;
+    }
+    & b {
+      color: var(--dark-color);
+    }
+  }
+  & > button {
+    margin-top: 1.875rem;
+  }
+}
+:global(#s-u-g) {
+  width: 48.125rem;
+  :global(#s-u-g-l) {
+    display: flex;
+    align-items: center;
+    & > span {
+      margin-left: 0.625rem;
+    }
+  }
+  :global(#s-u-g-eb) {
+    margin-top: 2.5rem;
+  }
+}
+
+//
+$breakpoint-tablet: 991px;
+$breakpoint-mobile: 850px;
+
+@media (max-width: $breakpoint-tablet) {
+  .sign-up {
+    &-title {
+      font-size: 0.875rem;
+      & > p {
+        margin-bottom: 1.25rem;
+      }
+    }
+  }
+
+  .error-tooltip {
+    & > span {
+      top: 31rem;
+      left: 15.5rem;
+    }
+  }
+
+  .stage {
+    display: flex !important;
+    &:last-of-type {
+      margin-top: 1.25rem;
+      margin-left: 0rem;
+    }
+    &-id {
+      display: flex !important;
+    }
+  }
+  .identification {
+    &-fields {
+      & > img {
+        display: none;
+      }
+    }
+  }
+  .sms-code {
+    &__sent-block {
+      margin-top: 1.875rem;
+      & > p {
+        margin-top: 1.25rem;
+        margin-left: 0rem;
+      }
+    }
+  }
+  .submit {
+    & > p {
+      margin-bottom: 1.25rem;
+    }
+  }
+  .agreement {
+    & > img {
+      display: none;
+    }
+    & .container {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: $breakpoint-mobile) {
+  .login {
+    margin-bottom: 1.25rem;
+    &-options {
+      display: flex !important;
+      &__container {
+        margin-left: 0rem;
+      }
+    }
+  }
+  .password {
+    margin-bottom: 1.25rem;
+    & > button {
+      margin-left: 0rem;
+    }
+  }
+}
+
+.error-tooltip {
+  & > span {
+    top: 32.8rem;
+    left: 14rem;
+  }
+}
+
+.urgentError {
+  margin-top: 1rem;
+  font-style: italic;
+  color: var(--warn-color);
+}
+
+.instructionButton {
+  display: flex;
+  margin-top: 1.5rem;
+  width: 100%;
+  justify-content: space-between;
+  & > .textInstruction,
+  & > .videoInstruction {
+    display: flex;
+    align-items: center;
+    & > Svg {
+      margin-right: 0.625rem;
+    }
+  }
+  & a {
+    font-size: 0.875rem;
+  }
+}
+
+$breakpoint-mobile: 850px;
+
+@media (max-width: $breakpoint-mobile) {
+  .instructionButton {
+    flex-direction: column;
+    & > .textInstruction {
+      margin-bottom: 0.625rem;
+    }
+  }
+}

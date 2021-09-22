@@ -1,0 +1,90 @@
+.entity {
+  composes: authenticity from "../Authenticity/index.scss";
+  max-width: 57.5rem;
+  :global(#digital-sign) {
+    & + hr {
+      margin: 2.5rem 0rem;
+    }
+  }
+  & > hr {
+    max-width: 42.75rem;
+    margin: 1.875rem 0rem;
+  }
+}
+.header {
+  composes: header from "../index.scss";
+}
+.title {
+  composes: innerHeader from "../index.scss";
+}
+.member {
+  composes: flAlnCen from "Components/index.scss";
+  margin-top: 1.5rem;
+  margin-bottom: 1.625rem;
+  cursor: pointer;
+  & > span {
+    font-weight: 400;
+    font-size: 1rem;
+    margin-left: 0.625rem;
+    color: var(--mid-color);
+  }
+  &__active {
+    pointer-events: none;
+    & > span {
+      font-weight: 500;
+      color: var(--dark-color);
+    }
+  }
+}
+.assign-director {
+  composes: flAlnCen from "Components/index.scss";
+  & .action {
+    margin-left: 1.25rem;
+  }
+}
+.assigned-entities {
+  width: 57.5rem;
+}
+.cert {
+  composes: cert from "Components/DigitalSign/index.scss";
+  &-block {
+    composes: certBlock from "Components/DigitalSign/index.scss";
+  }
+  &-data {
+    composes: certData from "Components/DigitalSign/index.scss";
+  }
+  &-fields {
+    composes: certFields from "Components/DigitalSign/index.scss";
+  }
+}
+.action {
+  composes: action from "Components/DigitalSign/index.scss";
+}
+
+.juridicalInstruction {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  & > Svg {
+      margin-right: 0.625rem;
+    }
+  & a {
+    font-size: 0.875rem;
+  }
+
+}
+
+
+//
+$breakpoint-mobile: 850px;
+
+@media (max-width: $breakpoint-mobile) {
+  .member {
+    display: flex !important;
+  }
+  .assign-director {
+    & .action {
+      margin-left: 0rem;
+    }
+  }
+}

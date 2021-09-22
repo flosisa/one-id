@@ -1,0 +1,56 @@
+.help {
+  composes: common from "../Cabinet/index.scss";
+  text-align: justify;
+  & > div {
+    &:not(:last-of-type) {
+      margin-bottom: 2.5rem;
+    }
+    & > p {
+      font-size: 1.875rem;
+      font-weight: 600;
+      margin-bottom: 2.5rem;
+      text-decoration: underline;
+    }
+    & > section {
+      &:not(:first-of-type) {
+        margin-top: 3.75rem;
+      }
+      & > p:first-of-type {
+        text-align: center;
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1.25rem;
+        color: var(--smoke-color);
+      }
+      & > div {
+        & > p {
+          font-weight: 600;
+          margin-bottom: 0.625rem;
+        }
+        & > span {
+          display: block;
+          font-size: 1rem;
+          margin-bottom: 0.625rem;
+        }
+        & .hyphen {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
+//
+$breakpoint-mobile: 850px;
+
+@media (max-width: $breakpoint-mobile) {
+  .help {
+    composes: common from "../Cabinet/index.scss";
+    text-align: justify;
+    & > div {
+      & > p {
+        font-size: 1.625rem;
+      }
+    }
+  }
+}

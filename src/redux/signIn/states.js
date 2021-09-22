@@ -1,0 +1,5 @@
+export const SIGN_IN = 'signIn'
+export const CHECK_TOKEN = 'checkToken'
+export const UUID = 'uuid'
+export const DIGITAL_SIGN = 'digitalSign'
+export const PASSWORD_RESET = 'passwordReset'

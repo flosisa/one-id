@@ -1,0 +1,84 @@
+.modal-au {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 8;
+  background-color: transparent;
+  &__fade {
+    opacity: 0;
+    z-index: 6;
+    position: relative;
+    display: none;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+  }
+  &__content {
+    background-color: var(--white-color);
+    border-radius: 0.25rem;
+    padding: 3.125rem;
+    z-index: 9;
+    max-height: 50rem;
+    overflow: auto;
+    & > div {
+      padding: 0rem;
+    }
+    & input + div > span {
+      width: 10rem;
+      word-wrap: break-word;
+    }
+  }
+  &__backdrop {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    background: var(--dark-color);
+    opacity: 0;
+    z-index: 7;
+  }
+}
+:global(.close) {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 0.6875rem;
+  &:hover {
+    cursor: pointer;
+    & path {
+      fill: var(--primary-hover-color);
+    }
+  }
+}
+
+//
+// Media queries
+$breakpoint-mobile: 850px;
+
+@media screen and (max-width: 1448px) and (max-height: 880px) {
+  .modal-au {
+    &__content {
+      max-height: 600px;
+    }
+  }
+}
+@media (max-width: $breakpoint-mobile) {
+  .modal-au {
+    width: 96%;
+    &__content {
+      padding: 1.875rem;
+    }
+  }
+}
+@media (max-height: 430px) {
+  .modal-au {
+    &__content {
+      max-height: 320px;
+    }
+  }
+}
